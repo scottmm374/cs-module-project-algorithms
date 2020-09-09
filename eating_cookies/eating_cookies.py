@@ -17,17 +17,18 @@ x = climb_stairs(0, 3)
 print(x)
 
 
-def eating_cookies(n):
-    cookie = 0
-    #  if too many cookies eaten
-    while cookie is < n:
+# def eating_cookies(n):
+#     eat_cookies = randint(1, 3)
+#     cookie = 0
+#     ways_to_eat = 0
+#     #  if too many cookies eaten
+#     while cookie is < n:
 
-    if cookie > n:
-        return 0
-    if cookie == n:
-        return 1
+#         if cookie > n:
+#             return 0
+#         if cookie == n:
+#             ways_to_eat += 1
 
-    return eating_cookies(cookie + 1) + eating_cookies(cookie + 2) + eating_cookies(cookie + 3)
 
 #     # eat 1 cookies, eat 2 cookies, eat 3 cookies
 
@@ -38,19 +39,3 @@ def eating_cookies(n):
 
 #     print(
 #         f"There are {eating_cookies(num_cookies)} ways for Cookie Monster to each {num_cookies} cookies")
-
-
-while j <= len(new_arr):
-    if new_arr[i] == new_arr[j]:
-
-        if i != new_arr[- 1]:
-            i += 2
-
-        if j != new_arr[- 2]:
-            j += 2
-
-        else:
-            return new_arr[i]
-    else:
-        print(new_arr[i])
-        return new_arr[i]
