@@ -2,11 +2,12 @@ import unittest
 import random
 from single_number import single_number
 
+
 class Test(unittest.TestCase):
     def test_single_number(self):
         arr = []
 
-        for i in range(1000):
+        for i in range(20):
             arr.append(i)
             arr.append(i)
 
@@ -15,6 +16,7 @@ class Test(unittest.TestCase):
         num = arr.pop(rand_index)
 
         self.assertEqual(single_number(arr), num)
+        print(num)
 
 
 if __name__ == '__main__':
