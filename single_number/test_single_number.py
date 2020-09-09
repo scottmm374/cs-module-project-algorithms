@@ -7,7 +7,7 @@ class Test(unittest.TestCase):
     def test_single_number(self):
         arr = []
 
-        for i in range(20):
+        for i in range(1000):
             arr.append(i)
             arr.append(i)
 
@@ -16,6 +16,7 @@ class Test(unittest.TestCase):
         num = arr.pop(rand_index)
 
         self.assertEqual(single_number(arr), num)
+        print(arr)
         print(num)
 
 

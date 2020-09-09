@@ -4,58 +4,35 @@ Returns: an integer
 '''
 
 
-# def single_number(arr):
-#     new_arr = arr
-#     for i in arr:
-
-#         if not arr.index(i):
-#             print(arr.index(i))
-#             return i
-
-
 def single_number(arr):
-    new_arr = sorted(arr)
+
+    arr.sort()
 
     i = 0
     j = 1
 
-    while i <= len(new_arr):
-        if new_arr[i] == new_arr[j]:
-            # print(new_arr[i], new_arr[j])
-            i += 2
-            if j != new_arr[- 2]:
+    while i <= (len(arr)):
+        # Run this is i and j values match
+        if arr[i] == arr[j]:
+            # Keeping track of index, since J gets out of range (odd number list)
+            # If j index is not 2nd to last increment both I and J 2 indicies
+            if j != (len(arr)-2):
+                i += 2
                 j += 2
-            # elif j == new_arr[-2]:
-            #     i += 2
+
+            # If J is second to last index (cannot move anymore), so only increment I (which will default last index)
             else:
-                return new_arr[-2]
+                i += 2
+            # If i in last index by default because of sort it will be the odd one out we are looking for
+                return arr[i]
+        # If I and J values do not match before the end of list, we have found the single number, which will always be I because of sort.
         else:
-            # print(new_arr[i])
-            return new_arr[i]
+            return arr[i]
 
 
 #  Passes half the time, sometimes gets stuck on 500
 if __name__ == '__main__':
     # Use the main function to test your implementation
-    # arr = [1, 1, 4, 4, 5, 5, 3, 3, 9]
-    # arr = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 9, 9, 10, 10,
-    #    11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19]
+    arr = [1, 1, 4, 4, 5, 5, 3, 3, 9, 0, 0]
 
-    print(single_number(arr))
-# single_number(arr)
-
-
-# while j <= len(new_arr):
-#         if new_arr[i] == new_arr[j]:
-
-#             if i != new_arr[- 1]:
-#                 i += 2
-
-#             if j != new_arr[- 2]:
-#                 j += 2
-
-#             else:
-#                 return new_arr[i]
-#         else:
-#             print(new_arr[i])
-#             return new_arr[i]
+    print(f"The odd-number-out is {single_number(arr)}")
