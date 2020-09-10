@@ -16,30 +16,13 @@ class Test(unittest.TestCase):
         self.assertEqual(product_of_all_other_numbers(arr), expected)
 
     # Uncomment this test to test your solution that doesn't utilize division
-    # def test_product_of_all_other_numbers_without_division(self):
-    #     arr = [7, 9, 1, 8, 6, 0, 7, 8, 8, 7, 10]
-    #     expected = [0, 0, 0, 0, 0, 94832640, 0, 0, 0, 0, 0]
 
-    #     self.assertEqual(product_of_all_other_numbers(arr), expected)
+    def test_product_of_all_other_numbers_without_division(self):
+        arr = [7, 9, 1, 8, 6, 0, 7, 8, 8, 7, 10]
+        expected = [0, 0, 0, 0, 0, 94832640, 0, 0, 0, 0, 0]
+
+        self.assertEqual(product_of_all_other_numbers(arr), expected)
 
 
 if __name__ == '__main__':
     unittest.main()
-
-    # def product_of_all_other_numbers(arr):
-#     i = 0
-#     j = 0
-#     prod_arr = []
-
-#     while i <= len(arr):
-#         result = 1
-#         while j <= len(arr):
-#             if j == i:
-#                 j += 1
-#             elif j != i:
-#                 result = result * arr[j]
-#                 j += 1
-#         prod_arr.append(result)
-#         print(prod_arr)
-#     i += 1
-#     return(prod_arr)
