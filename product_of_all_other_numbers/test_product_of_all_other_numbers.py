@@ -2,13 +2,16 @@ import unittest
 import random
 from product_of_all_other_numbers import product_of_all_other_numbers
 
+
 class Test(unittest.TestCase):
     def test_product_of_all_other_numbers_division_friendly(self):
         self.assertEqual(product_of_all_other_numbers([9, 90]), [90, 9])
-        self.assertEqual(product_of_all_other_numbers([1, 2, 3, 4, 5]), [120, 60, 40, 30, 24])
+        self.assertEqual(product_of_all_other_numbers(
+            [1, 2, 3, 4, 5]), [120, 60, 40, 30, 24])
 
         arr = [7, 9, 1, 8, 6, 7, 8, 8, 7, 10]
-        expected = [13547520, 10536960, 94832640, 11854080, 15805440, 13547520, 11854080, 11854080, 13547520, 9483264]
+        expected = [13547520, 10536960, 94832640, 11854080,
+                    15805440, 13547520, 11854080, 11854080, 13547520, 9483264]
 
         self.assertEqual(product_of_all_other_numbers(arr), expected)
 
@@ -19,5 +22,24 @@ class Test(unittest.TestCase):
 
     #     self.assertEqual(product_of_all_other_numbers(arr), expected)
 
+
 if __name__ == '__main__':
     unittest.main()
+
+    # def product_of_all_other_numbers(arr):
+#     i = 0
+#     j = 0
+#     prod_arr = []
+
+#     while i <= len(arr):
+#         result = 1
+#         while j <= len(arr):
+#             if j == i:
+#                 j += 1
+#             elif j != i:
+#                 result = result * arr[j]
+#                 j += 1
+#         prod_arr.append(result)
+#         print(prod_arr)
+#     i += 1
+#     return(prod_arr)
